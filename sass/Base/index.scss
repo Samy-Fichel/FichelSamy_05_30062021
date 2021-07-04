@@ -1,4 +1,47 @@
+body {
+    margin: auto;
+}
+
+header {
+    background-color: #d5befc;
+}
+
+.header {
+    display: flex;
+    margin: auto;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-logo {
+    display: flex;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.href_menu {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.fa {
+    padding-right: 0.7em;
+}
+
+.logo_orinoco {
+    width: 150px;
+    height: 100%;
+    padding-left: 2em;
+}
+
 .menu {
-    width: 5 0%;
-    background-color: wheat;
+    width: 100%;
+    padding-right: 3em;
+    font-size: 1.2em;
 }

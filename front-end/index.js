@@ -32,4 +32,4 @@ function displayHTMLTeddies(teddies) {
 //On appelle notre première fonction
 // Et on stocke le "return" de cette fonction dans la variable "myVariableTeddies"
 const myVariableTeddies = getServerTeddies();
-console.log(myVariableTeddies);   
+console.log(myVariableTeddies);

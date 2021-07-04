@@ -25,11 +25,11 @@ function displayHTMLTeddies(teddies) {
         console.log("name: ", teddy);
         const app = document.getElementById("app");
         console.log("Le Div dans le HTML", app);
-        app.innerHTML += "<div>" + teddy.name + " " + teddy.price + "</div>";
+        app.innerHTML += "<div>" + teddy.name + " " + teddy.price + " " + teddy.description + "</div>";
     }
     return null;
 }
 //On appelle notre première fonction
 // Et on stocke le "return" de cette fonction dans la variable "myVariableTeddies"
 const myVariableTeddies = getServerTeddies();
-console.log(myVariableTeddies);
+console.log(myVariableTeddies);   

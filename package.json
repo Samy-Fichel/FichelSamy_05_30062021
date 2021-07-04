@@ -1,0 +1,23 @@
+{
+    "name": "fichelsamy_05_30062021",
+    "version": "1.0.0",
+    "description": "folder sass",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "sass": "sass --watch ./sass/main.sass:./sass/main.css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Samy-Fichel/fichelsamy_05_30062021.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Samy-Fichel/fichelsamy_05_30062021/issues"
+    },
+    "homepage": "https://github.com/Samy-Fichel/fichelsamy_05_30062021#readme",
+    "dependencies": {
+        "sass": "^1.35.1"
+    }
+}

@@ -45,3 +45,13 @@ nav {
     padding-right: 3em;
     font-size: 1.2em;
 }
+
+.title-accueil {
+    @include font-family;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.5;
+    font-weight: bold;
+}

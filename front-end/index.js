@@ -24,7 +24,7 @@ function displayHTMLTeddies(teddies) {
         console.log("name: ", teddy);
         const app = document.getElementById("app");
         console.log("Le Div dans le HTML", app);
-        app.innerHTML += "<div>" + "<div>" + "<p>" + teddy.name + "</p>" + " " + "<p>" + teddy.price + "</p>" + "</div>" + `<img src="${teddy.imageUrl}" width='100' />` + "</div>";
+        app.innerHTML += "<div class='card'>" + "<div class='box-text'>" + "<p class='name-card'>" + teddy.name + "</p>" + " " + "<span class='price-card'>" + `${teddy.price / 100}.00 €` + "</span>" + "</div>" + `<img src="${teddy.imageUrl}" width='400' height='280' />` + "<div class='box-button'>" + "<form action='/back-end/images/logo_orinoco.png'>" + "<button class='btn'>Acheter un Oriourson</button>" + "</div>" + "</div>";
     }
     return null;
 }

@@ -1,3 +1,10 @@
 @mixin font-family {
     font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 15px;
+}
+
+@mixin card {
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
 }

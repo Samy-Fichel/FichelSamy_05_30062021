@@ -1,6 +1,6 @@
 body {
     margin: auto;
-    font-family: 'Belligerent Madness', sans-serif;
+    font-family: 'Belligerent Madness','Open Sans','Roboto', sans-serif;
 }
 
 header {
@@ -8,12 +8,12 @@ header {
     .header {
         display: flex;
         margin: auto;
-        padding: 10px;
-        justify-content: space-between;
+        padding: 10px;  
+        justify-content: space-between; 
         align-items: center;
     }
 }
-
+ 
 .box-logo {
     display: flex;
 }
@@ -141,7 +141,7 @@ img {
 }
 .container-footer{
     background-color:blanchedalmond;
-    height: 150px;
+    height: 200px;
 }
 .card-footer{
     display: flex;
@@ -153,11 +153,29 @@ img {
     font-weight: bold;
     font-size: 25px;
 }
-.link-footer{
+.box-footer{
     list-style-type: none;
     font-family: 'Open Sans';
     font-weight: bold;
     font-size: 18px;
     margin: auto;
 }
-/*end-footer*/
+.tel{
+    margin-right: 2em;
+}
+.link-footer{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: rgb(126, 143, 51);
+}
+.texts-footer-legal{
+    font-family: 'Open Sans';
+    display: flex;
+    justify-content: space-around;
+    margin: 2em;
+    margin-left: 4em;
+    font-weight: bold;      
+} 
+/*end-footer*/     

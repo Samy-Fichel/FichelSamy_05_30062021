@@ -72,7 +72,9 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
 }
-
+.href-card{
+    text-decoration: none;
+}
 .card {
     background-color: #f2f2f2;
     display: flex;
@@ -80,7 +82,7 @@ nav {
     align-items: center;
     justify-content: center;
     margin: 30px 10px;
-    padding: 1%;
+    padding: 10px 15px;
     box-sizing: border-box;
     @include card;
 }
@@ -101,10 +103,12 @@ nav {
     padding-right: 13rem;
     font-weight: bold;
     font-size: 20px;
+    color: black;
 }
 
 .price-card {
     background-color: #f9b25c;
+    color: black;
     padding: 10px;
     border-radius: 5px;
     @include font-family;
@@ -167,7 +171,7 @@ img {
     text-decoration: none;
     color: black;
 }
-a:hover{
+.link-footer:hover{
     color: rgb(126, 143, 51);
 }
 .texts-footer-legal{

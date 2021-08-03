@@ -8,12 +8,14 @@
     <script src="https://kit.fontawesome.com/65d272e922.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="product-page">
     <header>
         <div class="header">
             <div class="topbar">
                 <div class="box-logo">
-                    <img class="logo_orinoco" src="/back-end/images/logo_orinoco.png">
+                    <a href="/front-end/html/index.html">
+                        <img class="logo_orinoco" src="/back-end/images/logo_orinoco.png">
+                    </a>
                 </div>
             </div>
             <nav>
@@ -30,15 +32,36 @@
             <h2>Ourson 100% coton made in France</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         </div>
-        <h3 class="title-products">Nos produits</h3>
-        <!-- Produits -->
+        <h3 class="title-products">Votre Sélection</h3>
+        <!-- Products -->
         <div class="container-product">
-            <div id="name">Name</div>
-            <div id="price">Price</div>
-            <div>
-                <img id="img"></img>
+            <div class="card-product">
+                <div class="box-text-product">
+                    <div id="name">Name</div>
+                    <div id="price">Price</div>
+                </div>
+                <div class="product-img">
+                    <img id="img"></img>
+                </div>
+                <div>
+                    <form name="selectForm" class="select-colors">
+                        <label for="types-colors" name="types-colors">Choisir la couleur :</label>
+                        <select id="colors">
+                            <option selected="selected"></option>
+                            <option></option>
+                            <option></option>
+                            <option></option>
+                        </select>
+                    </form>
+                </div>
+                <div>
+                    <p id="description">Description</p>
+                </div>
+                <form class="button" action="/front-end/html/index.html">
+                    <button class="btn-basket">Ajouter au Panier</button>
+                </form>
+
             </div>
-            <div class="description">Description</div>
         </div>
     </main>
     <footer class="footer-accueil">
@@ -48,7 +71,7 @@
                 <div class="box-footer">
                     <span class="tel">
                         <i class="fas fa-id-card"></i>
-                            Tel: 01.02.01.02.01
+                        Tel: 01.02.01.02.01
                     </span>
 
                     <span>

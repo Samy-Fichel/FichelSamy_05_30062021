@@ -49,6 +49,14 @@ function displayHTMLTeddies(teddies) {
 const myVariableTeddies = getServerTeddies();
 console.log(myVariableTeddies);
 
+
+
+
+
+
+
+
+
 //Code pour l'appel des id de chaque produits 
 //déclaration de variable
 let _id = [];

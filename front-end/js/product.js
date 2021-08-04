@@ -35,19 +35,27 @@ function displayHTMLTeddy(teddy) {
   const colorsElement = document.getElementById("colors");
   nameElement.innerHTML = teddy.name;
   priceElement.innerHTML = `${teddy.price / 100}.00 €`;
-  colorsElement.innerHTML = teddy.colors;
   imgElement.setAttribute("src", teddy.imageUrl);
   descriptionElement.innerHTML = teddy.description;
 
-  var selectedList = [],
-    selectBox = document.getElementById("colors"),
-    i;
+  colors = teddy.colors;
 
-  for (i = 0; i < selectBox.options.length; i++) {
-    if (selectBox.options[i].selected) {
-      selectedList.push(selectBox.options[i]);
-    }
+  let colorsOptions = "";
+  
+  for (let i = 0; i < colors.length; i++){
+    const color = colors[i];
+
+    colorsOptions += `<option value="${color}">${color}</option>` ;
   }
+
+  colorsElement.innerHTML =
+  `<select>
+    ${colorsOptions}
+  </select>
+  `;
+
+  console.log ("colorsOptions", colorsOptions);
+  console.log ("colors", colors);
 }
 
 //select + boucle pour afficher les couleurs // Comment ajouter des options dans un select

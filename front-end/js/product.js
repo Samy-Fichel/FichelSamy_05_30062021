@@ -38,25 +38,51 @@ function displayHTMLTeddy(teddy) {
   imgElement.setAttribute("src", teddy.imageUrl);
   descriptionElement.innerHTML = teddy.description;
 
-  colors = teddy.colors;
+  let colors = teddy.colors;
 
   let colorsOptions = "";
-  
-  for (let i = 0; i < colors.length; i++){
+
+  for (let i = 0; i < colors.length; i++) {
     const color = colors[i];
 
-    colorsOptions += `<option value="${color}">${color}</option>` ;
+    colorsOptions += `<option value="${color}">${color}</option>`;
   }
 
-  colorsElement.innerHTML =
-  `<select>
+  colorsElement.innerHTML = `<select id="choice_product">
     ${colorsOptions}
   </select>
   `;
 
-  console.log ("colorsOptions", colorsOptions);
-  console.log ("colors", colors);
-}
+  console.log("colorsOptions", colorsOptions);
+  console.log("colors", colors);
 
-//select + boucle pour afficher les couleurs // Comment ajouter des options dans un select
-//Faire le panier avec ajout au panier + garder les produits en memoire dans la page panier
+  //select + boucle pour afficher les couleurs // Comment ajouter des options dans un select
+  //Faire le panier avec ajout au panier + garder les produits en memoire dans la page panier
+
+  //Selection de l'id form des colors des teddies
+  const formId = document.querySelector("#choice_product");
+  console.log(formId);
+
+  //Mettre le produit choisi par l'utilisateur dans une variable
+  const choiceForm = formId.value;
+  console.log(choiceForm);
+
+  //Selection du bouton Ajouter l'article au panier
+  const sendBasket = document.getElementById("btn-basket");
+  console.log(sendBasket);
+
+  //Ecouter le bouton et envoyer le panier
+  sendBasket.addEventListener("click", (event) => {
+    event.preventDefault();
+    let panierLocalstorage = localStorage.getItem("panier") // Récupère le panier qui et en string
+    let panier = JSON.parse(panierLocalstorage) // Parse le panier pour le transfromer de string vers JavaScript
+    if(panier == null){
+      panier = [];   
+    }
+    panier.push({_id: teddy._id, price: teddy.price, name: teddy.name})
+    
+      localStorage.setItem("panier", JSON.stringify(panier));
+      alert("Mémorisation effectuée");
+  });
+
+};

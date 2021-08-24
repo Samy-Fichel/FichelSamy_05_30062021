@@ -75,11 +75,11 @@ function displayHTMLTeddy(teddy) {
   sendBasket.addEventListener("click", (event) => {
     event.preventDefault();
     let panierLocalstorage = localStorage.getItem("panier") // Récupère le panier qui et en string
-    let panier = JSON.parse(panierLocalstorage) // Parse le panier pour le transfromer de string vers JavaScript
+    let panier = JSON.parse(panierLocalstorage) // Parse le panier pour le transformer de string vers JavaScript
     if(panier == null){
       panier = [];   
     }
-    panier.push({_id: teddy._id, price: teddy.price, name: teddy.name})
+    panier.push({_id: teddy._id, price: teddy.price, name: teddy.name, imageUrl: teddy.imageUrl})
     
       localStorage.setItem("panier", JSON.stringify(panier));
       alert("Mémorisation effectuée");

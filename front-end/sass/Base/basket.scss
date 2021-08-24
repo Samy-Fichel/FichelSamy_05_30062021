@@ -3,4 +3,38 @@
 .basket-page{
     margin: auto;
 }
+.container-empty-basket{
+    display: flex;
+    justify-content: center;
+}
+.basket-empty{
+    font-family: 'Roboto';
+    background-color: orange;
+    padding: 15px;
+    border-radius: 10px;
+}
 
+#appPanier{
+    padding-bottom: 1em;
+}
+
+.container-basket-products{
+    @include font-family;
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+}
+
+table{
+    border-collapse: collapse;
+  }
+  
+  th, td{
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+.denomination-names{
+    font-family: 'Roboto';
+    text-align: center;
+}

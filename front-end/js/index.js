@@ -13,7 +13,7 @@ function getServerTeddies() {
     .catch(function (err) {
       // Une erreur est survenue
     });
-}
+};
 
 //Afficher un ours dans le HTML
 function displayHTMLTeddies(teddies) {
@@ -41,7 +41,7 @@ function displayHTMLTeddies(teddies) {
 </a>
   `;
   }
-  return null;
+  return JSON.parse(storage.getItem(panier));
 }
 
 //On appelle notre première fonction

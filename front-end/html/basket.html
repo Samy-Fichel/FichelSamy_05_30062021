@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../public/css/main.css" media="screen" />
     <script src="https://kit.fontawesome.com/65d272e922.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="basket-page">
     <header>
         <div class="header">
@@ -33,9 +34,33 @@
         </div>
         <h3 class="title-products">Panier</h3>
         <div id="appPanier">
-
         </div>
 
+        <!-- Formulaire html -->
+        <div id="form-orders">
+            <h2 class="title-form-basket">Merci de compléter le formulaire pour valider la commande</h2>
+
+            <form action="#" method="post">
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required>
+
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+
+                <label for="adresse">Adresse :</label>
+                <textarea id="adresse" name="adresse" required></textarea>
+
+                <label for="ville">Ville :</label>
+                <input type="text" id="ville" name="ville" required>
+
+                <label for="email">E-mail :</label>
+                <input type="text" id="email" name="email" required>
+
+                <button id="submit-form" type="submit" name="submit-form">
+                    Valider la commande
+                </button>
+            </form>
+        </div>
     </main>
     <footer class="footer-accueil">
         <div class="container-footer">
@@ -44,7 +69,7 @@
                 <div class="box-footer">
                     <span class="tel">
                         <i class="fas fa-id-card"></i>
-                            Tel: 01.02.01.02.01
+                        Tel: 01.02.01.02.01
                     </span>
 
                     <span>
@@ -67,8 +92,9 @@
     </footer>
     <script src="/front-end/js/basket.js"></script>
     <script src="/front-end/js/product.js"></script>
-    
-    
-   
+
+
+
 </body>
+
 </html>

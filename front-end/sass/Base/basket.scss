@@ -38,3 +38,36 @@ table{
     font-family: 'Roboto';
     text-align: center;
 }
+
+//Prix total
+.html-prices-products{
+    @include font-family;
+    text-align: center;
+}
+
+//Formulaire de commande 
+#form-orders{
+    border: 2px black solid;
+    background-color: bisque;
+    @include font-family;
+}
+.title-form-basket{
+    display: flex;
+    justify-content: center;
+}
+form{
+    background-color: rgb(89, 185, 189);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input{
+        background-color: rgb(185, 148, 135);
+        width: 80%;
+    }
+    textarea{
+        background-color: rgb(185, 148, 135);
+        width: 80%;
+
+    }
+}

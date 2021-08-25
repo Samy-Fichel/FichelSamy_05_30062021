@@ -48,3 +48,27 @@ const basketEmpty = `
    }
 
 }
+
+/*************************************************PRIX TOTAL DU PANIER**********************************/
+let totalBasketProducts = [];
+
+ //chercher les prices dans basket Variable + tableau array pour inclure les prix qui sont afficher dans le panier 
+ for (let i = 0; i < productsLocalStorage.length; i++){
+   let priceProducts = productsLocalStorage[i].price;
+
+   //ajouter les prices dans une variable 
+   totalBasketProducts.push(priceProducts)
+   console.log(totalBasketProducts);
+ }
+
+ //Addition des prices grâce à l'utilisation de la méthode reduce
+const reducer = (accumulator,currentValue) => accumulator + currentValue;
+const totalPrice = totalBasketProducts.reduce(reducer,0);
+console.log(totalPrice);
+
+//Code html du prix total 
+const htmlPricesproducts = `
+<div class = 'html-prices-products'>Le prix total est de : ${totalPrice /100}.00€ </div>
+`
+//Affichage du prix total sur la page panier 
+ElementHtml.insertAdjacentHTML("beforeEnd", htmlPricesproducts);

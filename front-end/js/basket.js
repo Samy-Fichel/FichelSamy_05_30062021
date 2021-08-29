@@ -19,33 +19,18 @@ const basketEmpty = `
  ElementHtml.innerHTML = basketEmpty;
 
 }else{
-  //si panier n'est pas vide : afficher les products qui sont dans le localStorage
-   let arrayProductsBasket = [];
 
    for(i = 0; i < productsLocalStorage.length; i++ ){
-    arrayProductsBasket = arrayProductsBasket + `
-  <div class = "container-basket-products">
-    <table>
-        <tr class="denomination-names">
-          <td>Nom</td>
-          <td>Prix</td>
-          <td>Id</td>
-          <td>Image</td>
-        </tr>
+     //injection html dans la page panier
+    document.getElementById('table-products').innerHTML += `
         <tr>
           <td>${productsLocalStorage[i].name}</td>
           <td>${productsLocalStorage[i].price /100}.00€</td>
           <td>${productsLocalStorage[i]._id}</td>
           <td><img src=${productsLocalStorage[i].imageUrl} width='100' height='70' /></td>
         </tr>
-    </table>
-  </div>
     `;
-   }
-    if(i === productsLocalStorage.length){
-    //injection html dans la page panier
-    ElementHtml.innerHTML = arrayProductsBasket;
-   }
+   } 
 
 }
 
@@ -68,7 +53,31 @@ console.log(totalPrice);
 
 //Code html du prix total 
 const htmlPricesproducts = `
-<div class = 'html-prices-products'>Le prix total est de : ${totalPrice /100}.00€ </div>
+<div class='block-price-total'><span class = 'html-prices-products'>Le prix total est de : ${totalPrice /100}.00€</span></div>
 `
 //Affichage du prix total sur la page panier 
 ElementHtml.insertAdjacentHTML("beforeEnd", htmlPricesproducts);
+
+
+
+//Ecouter le bouton et envoyer le panier
+let orderButtonelement = document.getElementById("form-orders");
+orderButtonelement.addEventListener("submit", (event) => {
+  event.preventDefault();
+  fetch(`http://localhost:3000/api/teddies/order`, {
+    method: 'post'
+  })
+    .then(function (res) {
+      if (res.ok) {
+        return res.json();
+      }
+    })
+    .then(function (value) {
+      console.log("Reponse", value);
+    })
+    .catch(function (err) {
+      // Une erreur est survenue
+    });
+
+    alert("Mémorisation de la commande effectuée");
+});

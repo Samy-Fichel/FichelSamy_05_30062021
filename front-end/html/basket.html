@@ -35,26 +35,41 @@
         <h3 class="title-products">Panier</h3>
         <div id="appPanier">
         </div>
-
+        <!-- Tableau de produits html -->
+        <div class="container-basket-products">
+            <table>
+                <thead>
+                    <tr class="denomination-names">
+                        <td>Nom</td>
+                        <td>Prix</td>
+                        <td>Id</td>
+                        <td>Image</td>
+                    </tr>
+                </thead>
+                    <tbody id="table-products">
+                    </tbody>
+            </table>
+        </div>
+        <!-- End Tableau de produits html -->
         <!-- Formulaire html -->
-        <div id="form-orders">
+        <div id="form-orders-container">
             <h2 class="title-form-basket">Merci de compléter le formulaire pour valider la commande</h2>
 
-            <form action="#" method="post">
+            <form id="form-orders" action="https://www.google.fr/" method="post">
                 <label for="prenom">Prénom :</label>
-                <input type="text" id="prenom" name="prenom" required>
+                <input type="text" id="prenom" name="prenom">
 
                 <label for="nom">Nom :</label>
-                <input type="text" id="nom" name="nom" required>
+                <input type="text" id="nom" name="nom">
 
                 <label for="adresse">Adresse :</label>
-                <textarea id="adresse" name="adresse" required></textarea>
+                <textarea id="adresse" name="adresse"></textarea>
 
                 <label for="ville">Ville :</label>
-                <input type="text" id="ville" name="ville" required>
+                <input type="text" id="ville" name="ville">
 
                 <label for="email">E-mail :</label>
-                <input type="text" id="email" name="email" required>
+                <input type="text" id="email" name="email">
 
                 <button id="submit-form" type="submit" name="submit-form">
                     Valider la commande

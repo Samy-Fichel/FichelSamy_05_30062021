@@ -1,73 +1,113 @@
-
 //Page Panier 
-.basket-page{
+.basket-page {
     margin: auto;
 }
-.container-empty-basket{
+
+.container-empty-basket {
     display: flex;
     justify-content: center;
 }
-.basket-empty{
+
+.basket-empty {
     font-family: 'Roboto';
     background-color: orange;
     padding: 15px;
     border-radius: 10px;
 }
 
-#appPanier{
+#appPanier {
     padding-bottom: 1em;
 }
 
-.container-basket-products{
+.container-basket-products {
     @include font-family;
     display: flex;
     justify-content: center;
     padding: 0.5em;
 }
 
-table{
+table {
     border-collapse: collapse;
-  }
-  
-  th, td{
+}
+
+th,
+td {
     border: 1px solid black;
     padding: 10px;
-  }
+}
+#table-products{
+    text-align: center;
+}
 
-.denomination-names{
+.denomination-names {
     font-family: 'Roboto';
     text-align: center;
 }
 
 //Prix total
-.html-prices-products{
+.block-price-total{
+    display: flex;
+    justify-content: center;
+    margin: 1.5em
+}
+.html-prices-products {
     @include font-family;
-    text-align: center;
+    font-family: "Open Sans";
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    background-color: #f9b25c;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 30px;
+    padding: 10px;
+    width: 30%;
+    max-width: 100%;
 }
 
 //Formulaire de commande 
-#form-orders{
+#form-orders-container {
     border: 2px black solid;
     background-color: bisque;
     @include font-family;
+    margin: 3em;
 }
-.title-form-basket{
+
+.title-form-basket {
     display: flex;
     justify-content: center;
 }
-form{
-    background-color: rgb(89, 185, 189);
+
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    input{
-        background-color: rgb(185, 148, 135);
-        width: 80%;
+    input {
+        background-color: rgb(255, 255, 255);
+        width: 45%;
+        border: 2px black solid;
+        border-radius: 5px;
     }
-    textarea{
-        background-color: rgb(185, 148, 135);
-        width: 80%;
+
+    textarea {
+        background-color: rgb(255, 255, 255);
+        width: 45%;
+        border: 2px black solid;
+        border-radius: 5px;
 
     }
+}
+
+#submit-form {
+    border-radius: 25px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #057055;
+    height: 45px;
+    width: 25%;
+    margin: 2em;
+    cursor: pointer;
 }

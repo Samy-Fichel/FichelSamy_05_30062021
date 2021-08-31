@@ -32,11 +32,6 @@ function displayHTMLTeddies(teddies) {
               <span class='price-card'> ${teddy.price / 100}.00 € </span> 
           </div>
               <img src=${teddy.imageUrl} width='400' height='280' />
-          <div class='box-button'> 
-            <form action="/front-end/html/product.html?id=${_id[i]}"> 
-              <button class='btn'>Voir le Produit</button>
-            </form>
-          </div>
     </div>
 </a>
   `;

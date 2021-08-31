@@ -35,7 +35,8 @@ td {
     border: 1px solid black;
     padding: 10px;
 }
-#table-products{
+
+#table-products {
     text-align: center;
 }
 
@@ -44,12 +45,41 @@ td {
     text-align: center;
 }
 
-//Prix total
-.block-price-total{
+//Vider le panier 
+.btn_delete {
     display: flex;
     justify-content: center;
-    margin: 1.5em
+    margin-top: 2em;
 }
+
+.btn_button_delete {
+    border: none;
+    line-height: 2;
+    padding: 0 20px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    background-color: #f9c78e;
+    border-radius: 10px;
+    font-size: large;
+    cursor: pointer;
+
+    &.btn_button_delete:hover {
+        background-color: #f9daa7;
+        color: rgb(44, 40, 40);
+    }
+
+}
+
+//Prix total
+.block-price-total {
+    display: flex;
+    justify-content: center;
+    margin: 1.5em;
+    margin-top: 3em;
+
+
+}
+
 .html-prices-products {
     @include font-family;
     font-family: "Open Sans";
@@ -60,7 +90,7 @@ td {
     background-color: #f9b25c;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 30px;
-    padding: 10px;
+    padding: 15px;
     width: 30%;
     max-width: 100%;
 }

@@ -8,3 +8,12 @@
     border-top-left-radius: 2%;
     border-top-right-radius: 2%;
 }
+
+@mixin btn-page-product {
+    border-radius: 25px;
+    border: none;
+    color: #fff;
+    background-color: #483131;
+    padding: 10px;
+    cursor: pointer;
+}

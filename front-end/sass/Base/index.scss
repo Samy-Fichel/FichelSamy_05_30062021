@@ -247,6 +247,7 @@ img {
 
 #colors {
     margin-left: 10px;
+    margin: 1em;
 }
 
 #description {
@@ -256,11 +257,11 @@ img {
 }
 
 #btn-basket {
-    border-radius: 25px;
-    border: none;
-    color: #ffff;
-
-    background-color: #483131;
-    padding: 10px;
-    cursor: pointer;
+    @include btn-page-product;
+}
+.box-button-return-index{
+    margin: 1em;
+}
+.btn_return_index{
+   @include btn-page-product;
 }

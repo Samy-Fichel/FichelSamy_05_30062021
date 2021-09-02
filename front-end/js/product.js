@@ -70,7 +70,7 @@ function displayHTMLTeddy(teddy) {
   //Selection du bouton Ajouter l'article au panier
   const sendBasket = document.getElementById("btn-basket");
   console.log(sendBasket);
-
+ 
   //Ecouter le bouton et envoyer le panier
   sendBasket.addEventListener("click", (event) => {
     event.preventDefault();

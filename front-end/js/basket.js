@@ -78,19 +78,61 @@ console.log(totalPrice);
 
 //Code html du prix total
 const htmlPricesproducts = `
-<div class='block-price-total'><span class = 'html-prices-products'>Le prix total est de : ${
-  totalPrice / 100
-}.00€</span></div>
+<div class='block-price-total'><span class = 'html-prices-products'>Le prix total est de : 
+${totalPrice / 100}.00€</span></div>
 `;
 //Affichage du prix total sur la page panier
 ElementHtml.insertAdjacentHTML("beforeend", htmlPricesproducts);
+/*************************************************END PRIX TOTAL DU PANIER**********************************/
 
+
+/*************************************************Envoie des données sur la page order de confirmation de commande**********************************/
 //Ecouter le bouton et envoyer le panier
 let orderButtonelement = document.getElementById("form-orders");
 orderButtonelement.addEventListener("submit", (event) => {
   event.preventDefault();
+  let firstNameinputElement = document.getElementById("prenom");
+  let firstNameinputElementValue = firstNameinputElement.value;
+  /*let firstNameinputElement = document.getElementById("nom");
+  let firstNameinputElementValue = firstNameinputElement.value;
+  let firstNameinputElement = document.getElementById("address");
+  let firstNameinputElementValue = firstNameinputElement.value;*/
+  console.log("imput prenom",firstNameinputElementValue)
+  //Rajouter if = null affiche un message d'erreur sinon validé 
+  /**
+ *
+ * Expects request to contain:
+ * contact: {
+ *   firstName: string,
+ *   lastName: string,
+ *   address: string,
+ *   city: string,
+ *   email: string
+ * }
+ * products: [string] <-- array of product _id
+ *
+ */
   fetch(`http://localhost:3000/api/teddies/order`, {
-    method: "post",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: "POST",
+    body: JSON.stringify({
+      //1er propriete de l'objet body
+      contact: {
+        firstName: firstNameinputElementValue,
+        lastName: "Fic",
+        address: "1 rue des rue",
+        city: "Strasbourg",
+        email: "test@mail.com"
+      },
+      //2eme propriete de l'objet body
+      //get item de basket 
+      products:
+      ["5be9c8541c9d440000665243"]
+    })
+
   })
     .then(function (res) {
       if (res.ok) {
@@ -106,3 +148,5 @@ orderButtonelement.addEventListener("submit", (event) => {
 
   alert("Mémorisation de la commande effectuée");
 });
+/*************************************************End envoie des données sur la page order de confirmation de commande**********************************/
+

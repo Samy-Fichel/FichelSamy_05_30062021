@@ -10,7 +10,7 @@ console.log(ElementHtml);
 
 //si panier et vide : affiche panier vide, si panier pas vide aficher les products qui sont dans le localStorage
 
-if (productsLocalStorage === null) {
+if (productsLocalStorage === null) {   
   const basketEmpty = `
   <div class="container-empty-basket">
     <div class="basket-empty">VOTRE PANIER EST VIDE</div>
@@ -93,12 +93,18 @@ orderButtonelement.addEventListener("submit", (event) => {
   event.preventDefault();
   let firstNameinputElement = document.getElementById("prenom");
   let firstNameinputElementValue = firstNameinputElement.value;
-  /*let firstNameinputElement = document.getElementById("nom");
-  let firstNameinputElementValue = firstNameinputElement.value;
-  let firstNameinputElement = document.getElementById("address");
-  let firstNameinputElementValue = firstNameinputElement.value;*/
+  let lastNameinputElement = document.getElementById("nom");
+  let lastNameinputElementValue = lastNameinputElement.value;
+  let addressinputElement = document.getElementById("addresse");
+  let addressinputElementValue = addressinputElement.value;
+  let cityinputElement = document.getElementById("ville");
+  let cityinputElementValue = cityinputElement.value;
+  let emailinputElement = document.getElementById("email");
+  let emailinputElementValue = emailinputElement.value;
+  //let firstNameinputElement = document.getElementById("address");
+  //let firstNameinputElementValue = firstNameinputElement.value;*/
   console.log("imput prenom",firstNameinputElementValue)
-  //Rajouter if = null affiche un message d'erreur sinon validé 
+  //Rajouter if = null affiche un message d'erreur sinon continuer 
   /**
  *
  * Expects request to contain:
@@ -122,15 +128,16 @@ orderButtonelement.addEventListener("submit", (event) => {
       //1er propriete de l'objet body
       contact: {
         firstName: firstNameinputElementValue,
-        lastName: "Fic",
-        address: "1 rue des rue",
-        city: "Strasbourg",
-        email: "test@mail.com"
+        lastName: lastNameinputElementValue,
+        address: addressinputElementValue,
+        city: cityinputElementValue,
+        email: emailinputElementValue 
       },
       //2eme propriete de l'objet body
       //get item de basket 
       products:
-      ["5be9c8541c9d440000665243"]
+    
+      ["panier"]
     })
 
   })

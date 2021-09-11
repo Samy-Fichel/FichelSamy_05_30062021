@@ -10,7 +10,7 @@ console.log(ElementHtml);
 
 //si panier et vide : affiche panier vide, si panier pas vide aficher les products qui sont dans le localStorage
 
-if (productsLocalStorage === null) {   
+if (productsLocalStorage === null) {
   const basketEmpty = `
   <div class="container-empty-basket">
     <div class="basket-empty">VOTRE PANIER EST VIDE</div>
@@ -18,18 +18,20 @@ if (productsLocalStorage === null) {
 `;
   ElementHtml.innerHTML = basketEmpty;
 } else {
+  let productIds = [];
   for (i = 0; i < productsLocalStorage.length; i++) {
     //injection html dans la page panier
+    productIds.push(productsLocalStorage[i]._id);
     document.getElementById("table-products").innerHTML += `
         <tr>
           <td>${productsLocalStorage[i].name}</td>
           <td>${productsLocalStorage[i].price / 100}.00€</td>
-          <td><img src=${
-            productsLocalStorage[i].imageUrl
-          } width='100' height='70' /></td>
+          <td><img src=${productsLocalStorage[i].imageUrl}
+      } width='100' height='70' /></td>
         </tr>
     `;
   }
+  console.log ("productIds", productIds);
 }
 
 //*******************SUPPRIMER TOUT LES ARTICLES DU PANIER******************************************************
@@ -86,6 +88,7 @@ ElementHtml.insertAdjacentHTML("beforeend", htmlPricesproducts);
 /*************************************************END PRIX TOTAL DU PANIER**********************************/
 
 
+
 /*************************************************Envoie des données sur la page order de confirmation de commande**********************************/
 //Ecouter le bouton et envoyer le panier
 let orderButtonelement = document.getElementById("form-orders");
@@ -103,7 +106,7 @@ orderButtonelement.addEventListener("submit", (event) => {
   let emailinputElementValue = emailinputElement.value;
   //let firstNameinputElement = document.getElementById("address");
   //let firstNameinputElementValue = firstNameinputElement.value;*/
-  console.log("imput prenom",firstNameinputElementValue)
+  console.log("imput prenom", firstNameinputElementValue)
   //Rajouter if = null affiche un message d'erreur sinon continuer 
   /**
  *
@@ -118,42 +121,66 @@ orderButtonelement.addEventListener("submit", (event) => {
  * products: [string] <-- array of product _id
  *
  */
-  fetch(`http://localhost:3000/api/teddies/order`, {
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    method: "POST",
-    body: JSON.stringify({
-      //1er propriete de l'objet body
-      contact: {
-        firstName: firstNameinputElementValue,
-        lastName: lastNameinputElementValue,
-        address: addressinputElementValue,
-        city: cityinputElementValue,
-        email: emailinputElementValue 
+
+  /**************************************************************Validation du formulaire de commande Regex ******************************/
+  function isNotEmpty(inputId) {
+    let inputElement = document.getElementById(inputId);
+    if (inputElement.value.length > 0) { // (^) = début de la regex / ($) = fin de la regex ([]) controle des différentes lettres ou caractères) ( {3 = minimum 20= maximum de caractères} = quantificateurs)
+      console.log("OK");
+      return true;
+    } else {
+      console.log("Erreur")
+      return false;
+    }
+  }
+
+
+  if (isNotEmpty("prenom") && isNotEmpty("nom") && isNotEmpty("adresse") && isNotEmpty("ville")) {
+    console.log("OK");
+
+    /**************************************************************END Validation du formulaire de commande Regex **************************/
+    fetch(`http://localhost:3000/api/teddies/order`, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
       },
-      //2eme propriete de l'objet body
-      //get item de basket 
-      products:
-    
-      ["panier"]
-    })
+      method: "POST",
+      body: JSON.stringify({
+        //1er propriete de l'objet body
+        contact: {
+          firstName: firstNameinputElementValue,
+          lastName: lastNameinputElementValue,
+          address: addressinputElementValue,
+          city: cityinputElementValue,
+          email: emailinputElementValue
+        },
+        //2eme propriete de l'objet body
 
-  })
-    .then(function (res) {
-      if (res.ok) {
-        return res.json();
-      }
-    })
-    .then(function (value) {
-      console.log("Reponse", value);
-    })
-    .catch(function (err) {
-      // Une erreur est survenue
-    });
+        products:
+          ["5be9c8541c9d440000665243"]
 
-  alert("Mémorisation de la commande effectuée");
+      })
+
+    })
+      .then(function (res) {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then(function (value) {
+        console.log("Reponse", value);
+      })
+      .catch(function (err) {
+        // Une erreur est survenue
+      });
+
+    alert("Mémorisation de la commande effectuée");
+    /*************************************************End envoie des données sur la page order de confirmation de commande**********************************/
+  } else {
+    console.log("KO");
+    alert("Veuillez complété le formulaire correctement")
+  }
+
 });
-/*************************************************End envoie des données sur la page order de confirmation de commande**********************************/
+
 

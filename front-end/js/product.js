@@ -79,7 +79,7 @@ function displayHTMLTeddy(teddy) {
     if(panier == null){
       panier = [];   
     }
-    panier.push({price: teddy.price, name: teddy.name, imageUrl: teddy.imageUrl})
+    panier.push({price: teddy.price, name: teddy.name, imageUrl: teddy.imageUrl, _id: teddy._id})
     
       localStorage.setItem("panier", JSON.stringify(panier));
       alert("Mémorisation effectuée");

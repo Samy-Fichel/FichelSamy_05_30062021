@@ -31,7 +31,7 @@ if (productsLocalStorage === null) {
         </tr>
     `;
   }
-  console.log ("productIds", productIds);
+  console.log("productIds", productIds);
 }
 
 //*******************SUPPRIMER TOUT LES ARTICLES DU PANIER******************************************************
@@ -132,11 +132,30 @@ orderButtonelement.addEventListener("submit", (event) => {
       console.log("Erreur")
       return false;
     }
+
   }
 
+  /************ Start Regex Email ***********************/
+  const regExEmail = (value) => {
+    return /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(value);
+  }
 
-  if (isNotEmpty("prenom") && isNotEmpty("nom") && isNotEmpty("adresse") && isNotEmpty("ville")) {
+  function emailControl() {
+    //Controle regex de l'email
+    const lEmail = emailinputElement.value;
+    if (regExEmail(lEmail)) {
+      return true;
+    } else {
+      alert("L'email n'est pas valide");
+    }
+    return false;
+  }
+  /************ End Regex Email **************************/
+
+  if (isNotEmpty("prenom") && isNotEmpty("nom") && isNotEmpty("addresse") && isNotEmpty("ville") && emailControl("email")) {
     console.log("OK");
+
+
 
     /**************************************************************END Validation du formulaire de commande Regex **************************/
     fetch(`http://localhost:3000/api/teddies/order`, {
@@ -182,5 +201,3 @@ orderButtonelement.addEventListener("submit", (event) => {
   }
 
 });
-
-

@@ -55,20 +55,19 @@
             <h2 class="title-form-basket">Merci de compléter le formulaire pour valider la commande</h2>
 
             <form id="form-orders" action="https://www.google.fr/" method="POST">
-                <label for="prenom">Prénom :</label>
+                <label for="prenom">Prénom :</label> <span id="missing-prenom"></span>
                 <input type="text" id="prenom" name="prenom">
-                <span id='adressMissing'></span>
 
-                <label for="nom">Nom :</label>
+                <label for="nom">Nom :</label><span id="missing-nom"></span>
                 <input type="text" id="nom" name="nom">
 
-                <label for="adresse">Adresse :</label>
+                <label for="adresse">Adresse :</label><span id="missing-addresse"></span>
                 <textarea id="addresse" name="adresse"></textarea>
 
-                <label for="ville">Ville :</label>
+                <label for="ville">Ville :</label><span id="missing-ville"></span>
                 <input type="text" id="ville" name="ville">
 
-                <label for="email">E-mail :</label>
+                <label for="email">E-mail :</label><span id="missing-email"></span>
                 <input type="text" id="email" name="email">
 
                 <button id="submit-form" type="submit" name="submit-form">

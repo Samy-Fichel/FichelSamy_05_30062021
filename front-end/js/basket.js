@@ -157,14 +157,17 @@ orderButtonelement.addEventListener("submit", (event) => {
       return true;
     } else {
       alert("L'email n'est pas valide");
+      document.getElementById("missing-email").textContent = "Veuillez bien compléter ce champ";
     }
     return false;
   }
-
+ 
   /************ End Regex Email **************************/
 
   if (isNotEmpty("prenom") && isNotEmpty("nom") && isNotEmpty("addresse") && isNotEmpty("ville") && emailControl("email")) {
     console.log("OK");
+    //Mettre le prix total dans le localStorage
+    localStorage.setItem("totalPrice",JSON.stringify(totalPrice));
 
     /**************************************************************END Validation du formulaire de commande Regex **************************/
     let productIds = [];
@@ -203,13 +206,15 @@ orderButtonelement.addEventListener("submit", (event) => {
         console.log("Reponse", response);
         let orderId = response.orderId;
         console.log("OrderId",orderId);
+        localStorage.setItem("responseId", response.orderId);
+        
       })
       .catch(function (err) {
         // Une erreur est survenue
       });
 
     alert("Mémorisation de la commande effectuée");
-        //window.location.href="/front-end/html/order.html";
+        window.location.href="/front-end/html/order.html";
     
     /*************************************************End envoie des données sur la page order de confirmation de commande**********************************/
   } else {

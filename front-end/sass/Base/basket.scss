@@ -119,9 +119,25 @@ form {
         border: 2px black solid;
         border-radius: 5px;
     }
-    #missing-field{
-        color: red;
-        font-weight: bold;
+
+    #missing-prenom {
+        @include missings_input;
+    }
+
+    #missing-nom {
+        @include missings_input;
+    }
+
+    #missing-addresse {
+        @include missings_input;
+    }
+
+    #missing-ville {
+        @include missings_input;
+    }
+
+    #missing-email {
+        @include missings_input;
     }
 
     textarea {
@@ -144,4 +160,30 @@ form {
     width: 25%;
     margin: 2em;
     cursor: pointer;
+}
+
+/**************** Ajout du scss pour la page order**************/
+.order-page {
+    font-family: 'belligerent-madness';
+}
+
+#box-order {
+    display: flex;
+    justify-content: center;
+}
+
+.container-order {
+    text-align: center;
+    max-width: 100%;
+    width: 50%;
+    border: 1px solid black;
+    margin-top: 10%;
+
+    .font-id-order {
+        font-weight: bold;
+    }
+
+    .font-price-order {
+        font-weight: bold;
+    }
 }

@@ -17,3 +17,8 @@
     padding: 10px;
     cursor: pointer;
 }
+
+@mixin missings_input {
+    color: red;
+    font-weight: bold;
+}

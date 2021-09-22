@@ -1,8 +1,102 @@
 body {
-    margin: auto;
+    margin: 0;
     font-family: 'Belligerent Madness', 'Open Sans', 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
-
+/*animation-loader*/
+.box-loader {
+    visibility: hidden;
+    -webkit-animation: loader 2s;
+    animation: loader 2s;
+    text-align: center;
+    background-color: rgba(#fff, 0.9);
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    margin-top: -1.4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/back-end/images/teddy-bear.jpeg');
+ 
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+  }
+  
+  @-webkit-keyframes loader {
+    0% {
+      visibility: visible;
+    }
+  
+    100% {
+      visibility: hidden;
+    }
+  }
+  
+  @keyframes loader {
+    0% {
+      visibility: visible;
+    }
+  
+    100% {
+      visibility: hidden;
+    }
+  }
+  
+  .anim-loader {
+    border-radius: 50px;
+    border: 7px solid rgba(196, 245, 229, 0.973);
+  }
+  
+  .anim-loader::after {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    bottom: -7px;
+    right: -7px;
+    border-radius: 50px;
+    border: 7px solid transparent;
+    border-top-color: black;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loader {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    color: black;
+    display: inline-block;
+    margin-left: 1.8em;
+  }
+  
+/*end-animation-loader*/
 header {
     background-color: blanchedalmond;
 
@@ -72,6 +166,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 100%;
 }
 
 .href-card {

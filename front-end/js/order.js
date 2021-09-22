@@ -28,5 +28,11 @@ function deleteKeyLocalStorage(key){
      localStorage.removeItem(key);
 };
 
-deleteKeyLocalStorage("totalPrice");
-deleteKeyLocalStorage("responseId");  
+deleteKeyLocalStorage("totalPrice"); 
+deleteKeyLocalStorage("responseId"); 
+deleteKeyLocalStorage("panier"); 
+
+//Retourner sur la page d'accueil après le tableau de confirmation de commande
+/*if(responseId == null || totalPrice == null){
+    window.location.href="index.html";
+}*/

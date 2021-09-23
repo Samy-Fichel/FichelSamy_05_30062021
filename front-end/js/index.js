@@ -24,7 +24,7 @@ function displayHTMLTeddies(teddies) {
     console.log("name: ", teddy);
     const app = document.getElementById("app");
     console.log("Le Div dans le HTML", app);
-    app.innerHTML +=` 
+    app.innerHTML += ` 
 <a href ="/front-end/html/product.html?id=${_id[i]}" class="href-card">
     <div class='card'>
           <div class='box-text'> 
@@ -59,7 +59,7 @@ let _id = [];
 const response = [
   {
     _id: "5be9c8541c9d440000665243"
-  }, 
+  },
   {
     _id: "5beaa8bf1c9d440000a57d94"
   },
@@ -75,8 +75,8 @@ const response = [
 ];
 
 //Boucle pour afficher l'objet id 
-for (let i = 0; i < response.length; i++) 
+for (let i = 0; i < response.length; i++)
   //Ont met les données dans la variable id 
   response.forEach((element, i) => {
     _id[i] = element._id;
-});
+  });

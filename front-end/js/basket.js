@@ -161,13 +161,13 @@ orderButtonelement.addEventListener("submit", (event) => {
     }
     return false;
   }
- 
+
   /************ End Regex Email **************************/
 
   if (isNotEmpty("prenom") && isNotEmpty("nom") && isNotEmpty("addresse") && isNotEmpty("ville") && emailControl("email")) {
     console.log("OK");
     //Mettre le prix total dans le localStorage
-    localStorage.setItem("totalPrice",JSON.stringify(totalPrice));
+    localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
 
     /**************************************************************END Validation du formulaire de commande Regex **************************/
     let productIds = [];
@@ -175,12 +175,12 @@ orderButtonelement.addEventListener("submit", (event) => {
       //injection html dans la page panier
       productIds.push(productsLocalStorage[i]._id);
     }
-    
+
     fetch(`http://localhost:3000/api/teddies/order`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
-      },  
+      },
       method: "POST",
       body: JSON.stringify({
         //1er propriete de l'objet body
@@ -193,35 +193,35 @@ orderButtonelement.addEventListener("submit", (event) => {
         },
         //2eme propriete de l'objet body
         products: productIds
-            
+
       })
 
     })
       .then(function (res) {
         if (res.ok) {
-          return res.json(); 
+          return res.json();
         }
       })
       .then(function (response) {
         console.log("Reponse", response);
         let orderId = response.orderId;
-        console.log("OrderId",orderId);
+        console.log("OrderId", orderId);
         localStorage.setItem("responseId", response.orderId);
-        
+
       })
       .catch(function (err) {
         // Une erreur est survenue
       });
 
     alert("Mémorisation de la commande effectuée");
-        window.location.href="/front-end/html/order.html";
-    
+    window.location.href = "/front-end/html/order.html";
+
     /*************************************************End envoie des données sur la page order de confirmation de commande**********************************/
   } else {
-    
+
     console.log("KO");
     alert("Veuillez compléter le formulaire correctement");
-    
+
     /*document.getElementById("missing-field").textContent = "Veuillez bien compléter ce champ";
     document.getElementById("missing-field").textContent = "Veuillez bien compléter ce champ";
     document.getElementById("missing-field").textContent = "Veuillez bien compléter ce champ";

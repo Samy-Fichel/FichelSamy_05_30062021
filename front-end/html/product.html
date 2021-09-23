@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <title>Orinoco</title>
@@ -14,7 +14,8 @@
             <div class="topbar">
                 <div class="box-logo">
                     <a href="/front-end/html/index.html">
-                        <img class="logo_orinoco" src="/back-end/images/logo_orinoco.png">
+                        <img class="logo_orinoco" src="/back-end/images/logo_orinoco.png"
+                            alt="Logo du site e-commerce orinoco">
                     </a>
                 </div>
             </div>
@@ -37,16 +38,17 @@
         <div class="container-product">
             <div class="card-product">
                 <div class="box-text-product">
-                    <div id="name">Name</div>
-                    <div id="price">Price</div>
+                    <div id="name"></div>
+                    <div id="price"></div>
                 </div>
                 <div class="product-img">
-                    <img id="img"></img>
+                    <img id="img" src="img" alt="Image d'un ours en peluche">
                 </div>
                 <div>
                     <form name="selectForm" class="select-colors">
-                        <label for="types-colors" name="types-colors">Choisir la couleur :</label>
-                        <div id="colors" name="colors">
+                        <label for="types-colors">Choisir la couleur :</label>
+                        <input id="types-colors" />
+                        <div id="colors">
                         </div>
                     </form>
                 </div>
@@ -92,7 +94,7 @@
     </footer>
     <script src="/front-end/js/product.js"></script>
     <script src="/front-end/js/basket.js"></script>
-    
+
 </body>
 
 </html>

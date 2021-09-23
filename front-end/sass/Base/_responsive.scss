@@ -1,67 +1,92 @@
 /* start Media queries mobile*/
-@media screen  and  (max-width: 1128px){
-    #app{
+@media screen and (max-width: 1128px) {
+    #app {
         flex-direction: column;
         margin-left: auto;
         margin-right: auto;
         flex-wrap: nowrap;
     }
-    .box-loader{
+
+    .box-loader {
         background-size: 85%;
     }
 
     //Page Product
-    .container-product{
-        margin: 9%;
+    .container-product {
+        width: 70%;
+        margin-right: auto;
+        margin-left: auto;
+        height: 600px;
     }
-    .title-accueil{
+
+    .box-text-product {
+        flex-direction: column;
+    }
+
+    #name {
+        margin-right: 11em;
+    }
+
+
+    .title-accueil {
         line-height: 1;
         text-align: center;
         font-size: 12px;
     }
+
     //Page basket
-    .block-price-total{
+    .block-price-total {
         margin: auto;
         margin-top: 3em;
     }
-    #form-container{
+
+    #form-container {
         font-size: 9px;
         margin: 1em;
         text-align: center;
     }
-    #submit-form{
+
+    #submit-form {
         width: 55%;
     }
-    .container-footer{
+
+    .container-footer {
         height: 370px;
         display: flex;
         flex-direction: column;
     }
-    .box-footer{
+
+    .box-footer {
         display: flex;
         flex-direction: column;
         margin: 0;
     }
-    .tel{
+
+    .tel {
         margin-bottom: 1em;
     }
-    .texts-footer-legal{
+
+    .texts-footer-legal {
         text-align: center;
         flex-direction: column;
         margin-left: auto;
         margin-right: auto;
     }
-    #form-orders{
+
+    #form-orders {
         font-size: 14px;
     }
-    form input{
+
+    form input {
         width: 60%;
     }
-    form textarea{
+
+    form textarea {
         width: 60%;
     }
+
     //Page Order
-    .container-order{
+    .container-order {
         width: 80%;
     }
 

@@ -70,19 +70,19 @@ function displayHTMLTeddy(teddy) {
   //Selection du bouton Ajouter l'article au panier
   const sendBasket = document.getElementById("btn-basket");
   console.log(sendBasket);
- 
+
   //Ecouter le bouton et envoyer le panier
   sendBasket.addEventListener("click", (event) => {
     event.preventDefault();
     let panierLocalstorage = localStorage.getItem("panier") // Récupère le panier qui et en string
     let panier = JSON.parse(panierLocalstorage) // Parse le panier pour le transformer de string vers JavaScript
-    if(panier == null){
-      panier = [];   
+    if (panier == null) {
+      panier = [];
     }
-    panier.push({price: teddy.price, name: teddy.name, imageUrl: teddy.imageUrl, _id: teddy._id})
-    
-      localStorage.setItem("panier", JSON.stringify(panier));
-      alert("Mémorisation effectuée");
+    panier.push({ price: teddy.price, name: teddy.name, imageUrl: teddy.imageUrl, _id: teddy._id })
+
+    localStorage.setItem("panier", JSON.stringify(panier));
+    alert("Mémorisation effectuée");
   });
 
 };

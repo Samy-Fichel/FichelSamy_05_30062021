@@ -10,7 +10,6 @@ const ElementHtml = document.getElementById("appPanier");
 console.log(ElementHtml);
 
 //si panier et vide : affiche panier vide, si panier pas vide aficher les products qui sont dans le localStorage
-
 if (productsLocalStorage === null) {
   const basketEmpty = `
   <div class="container-empty-basket">
@@ -34,7 +33,6 @@ if (productsLocalStorage === null) {
   }
   //console.log("productIds", productIds);
 }
-
 //*******************SUPPRIMER TOUT LES ARTICLES DU PANIER******************************************************
 //Html button
 const btn_delete_html = `
@@ -42,8 +40,8 @@ const btn_delete_html = `
   <button class="btn_button_delete">Vider le panier</button>
 </div>
 `;
-ElementHtml.insertAdjacentHTML("beforeend", btn_delete_html);
 
+ElementHtml.insertAdjacentHTML("beforeend", btn_delete_html);
 //selection de btn_delete
 const btn_delete_basket = document.querySelector(".btn_delete");
 console.log(btn_delete_basket);
@@ -166,8 +164,10 @@ orderButtonelement.addEventListener("submit", (event) => {
 
   if (isNotEmpty("prenom") && isNotEmpty("nom") && isNotEmpty("addresse") && isNotEmpty("ville") && emailControl("email")) {
     console.log("OK");
+
     //Mettre le prix total dans le localStorage
     localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
+    
 
     /**************************************************************END Validation du formulaire de commande Regex **************************/
     let productIds = [];
@@ -221,11 +221,5 @@ orderButtonelement.addEventListener("submit", (event) => {
 
     console.log("KO");
     alert("Veuillez compléter le formulaire correctement");
-
-    /*document.getElementById("missing-field").textContent = "Veuillez bien compléter ce champ";
-    document.getElementById("missing-field").textContent = "Veuillez bien compléter ce champ";
-    document.getElementById("missing-field").textContent = "Veuillez bien compléter ce champ";
-    document.getElementById("missing-field").textContent = "Veuillez bien compléter ce champ";
-    document.getElementById("missing-field").textContent = "Veuillez bien compléter ce champ";*/
   }
 });

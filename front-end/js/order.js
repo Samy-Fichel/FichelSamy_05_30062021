@@ -1,10 +1,8 @@
 //Récuperer l'id de commande via le serveur en utilisant le stockage de l'id dans le localStorage
 const responseId = localStorage.getItem("responseId");
-console.log(`responseId: ${responseId}`);
 
 //Recuper le prix total de la commande de la page panier
 const totalPrice = localStorage.getItem("totalPrice");
-console.log(`prixTotal: ${totalPrice}`);
 
 // Affichage du prix et de l'id sur la page order
 const orderPriceId = document.getElementById("box-order");
@@ -34,6 +32,6 @@ deleteKeyLocalStorage("responseId");
 deleteKeyLocalStorage("panier");
 
 //Retourner sur la page d'accueil après le tableau de confirmation de commande
-/*if(responseId == null || totalPrice == null){
+if(responseId == null || totalPrice == null){
     window.location.href="index.html";
-}*/
+}

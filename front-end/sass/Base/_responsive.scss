@@ -11,6 +11,14 @@
         background-size: 85%;
     }
 
+    .name-card {
+        padding-right: 8rem;
+    }
+
+    .price-card {
+        font-size: 13px;
+    }
+
     //Page Product
     .container-product {
         width: 70%;
@@ -24,11 +32,11 @@
     }
 
     #name {
-        margin-right: 11em;
+        margin-right: 10em;
     }
 
 
-    .title-accueil {
+    .title-home {
         line-height: 1;
         text-align: center;
         font-size: 12px;

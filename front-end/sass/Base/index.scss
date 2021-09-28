@@ -145,7 +145,7 @@ nav {
     font-weight: bold;
 }
 
-.title-accueil {
+.title-home {
     background-image: url("/back-end/images/paper-banner.jpeg");
     @include font-family;
     display: flex;
@@ -217,10 +217,12 @@ img {
     object-fit: cover;
     @include card;
     margin-top: 20px;
+    max-width: 400px;
+    width: 100%;
 }
 
 /*start-footer*/
-.footer-accueil {
+.footer-home {
     background-color: black;
 }
 

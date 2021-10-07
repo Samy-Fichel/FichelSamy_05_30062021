@@ -1,6 +1,6 @@
 //Récuperer l'id de commande via le serveur en utilisant le stockage de l'id dans le localStorage
 const responseId = localStorage.getItem("responseId");
-
+console.log(`responseId : ${responseId} `);
 //Recuper le prix total de la commande de la page panier
 const totalPrice = localStorage.getItem("totalPrice");
 
@@ -13,8 +13,7 @@ const orderConfirmation = `
     <div>
         <p>Nous vous remercions de votre commande</p>
         <p>Votre n° de commande et le: <span class="font-id-order">${responseId}</span> est à bien été prise en compte</p>
-        <p>Le montant total de votre commande se porte à : <span class="font-price-order">${totalPrice / 100
-    }.00 €</span></p>
+        <p>Le montant total de votre commande se porte à : <span class="font-price-order">${totalPrice / 100}.00 €</span></p>
     </div>
 </div>   
 `;
@@ -27,11 +26,6 @@ function deleteKeyLocalStorage(key) {
     localStorage.removeItem(key);
 }
 
-deleteKeyLocalStorage("totalPrice");
 deleteKeyLocalStorage("responseId");
+deleteKeyLocalStorage("totalPrice");
 deleteKeyLocalStorage("panier");
-
-//Retourner sur la page d'accueil après le tableau de confirmation de commande
-if(responseId == null || totalPrice == null){
-    window.location.href="index.html";
-}

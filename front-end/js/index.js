@@ -7,7 +7,7 @@ function getServerTeddies() {
       }
     })
     .then(function (value) {
-
+   
       displayHTMLTeddies(value);
     })
     .catch(function (err) {
@@ -21,8 +21,9 @@ function displayHTMLTeddies(teddies) {
   for (let i = 0; i < teddies.length; i++) {
     //i = 2
     const teddy = teddies[i];
-
+    
     const app = document.getElementById("app");
+
     app.innerHTML += ` 
       <a href ="/front-end/html/product.html?id=${_id[i]}" class="href-card">
           <div class='card'>

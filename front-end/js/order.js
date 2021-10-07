@@ -1,6 +1,6 @@
 //Récuperer l'id de commande via le serveur en utilisant le stockage de l'id dans le localStorage
 const responseId = localStorage.getItem("responseId");
-console.log(`responseId : ${responseId} `);
+
 //Recuper le prix total de la commande de la page panier
 const totalPrice = localStorage.getItem("totalPrice");
 

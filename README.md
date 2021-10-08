@@ -23,7 +23,7 @@ Pour pouvoir démarrer ce site en local, vous devez avoir installé un serveur h
 
 ### Démarrage du serveur ###
 
-Démarrer le serveur à la racine du projet avec ##http-server## puis vous devriez pouvoir accéder au projet pleinement fonctionnel via l'url : 
+Démarrer le serveur à la racine du projet avec #http-server# puis vous devriez pouvoir accéder au projet pleinement fonctionnel via l'url : 
 
 http://127.0.0.1:8080 (sur le port n° 8080) 
 

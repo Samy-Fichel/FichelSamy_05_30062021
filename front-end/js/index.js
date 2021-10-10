@@ -11,7 +11,7 @@ function getServerTeddies() {
       displayHTMLTeddies(value);
     })
     .catch(function (err) {
-      // Une erreur est survenue
+      displayError(err);
     });
 }
 

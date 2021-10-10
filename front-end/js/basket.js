@@ -116,7 +116,7 @@ orderButtonelement.addEventListener("submit", (event) => {
   function isNotEmpty(inputId) {
     let inputElement = document.getElementById(inputId);
     if (inputElement.value.length > 0) {
-      // Regex ( {3 = minimum 20= maximum de caractères} = quantificateurs)
+  
       champTextEmpty(`missing-${inputId}`);
       /*****Contrôle du remplissage des champs du formulaire*****************/
       function champTextEmpty(id) {
@@ -202,7 +202,7 @@ orderButtonelement.addEventListener("submit", (event) => {
         localStorage.setItem("responseId", orderId);
       })
       .catch(function (err) {
-        // Une erreur est survenue
+        displayError(err);
       });
       
     window.location.href = "/front-end/html/order.html";

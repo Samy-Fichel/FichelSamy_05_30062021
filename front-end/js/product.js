@@ -22,6 +22,7 @@ function getServerTeddy(teddyId) {
       displayHTMLTeddy(value);
     })
     .catch(function (err) {
+      displayError(err);
     });
 }
 
